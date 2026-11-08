@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// PHẦN PHAN VĨNH SƠN: Cử chỉ (GestureDetector) + Implicit Animation (AnimatedContainer)
+//Cử chỉ (GestureDetector) + Implicit Animation (AnimatedContainer)
 class ImplicitCardDemo extends StatefulWidget {
   const ImplicitCardDemo({super.key});
 

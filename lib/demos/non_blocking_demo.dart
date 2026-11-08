@@ -34,6 +34,18 @@ class _NonBlockingDemoState extends State<NonBlockingDemo>
     _isOpen ? _controller.forward() : _controller.reverse();
   }
 
+  // Hiển thị thông báo tức thì (xóa thông báo cũ để không bị dồn hàng đợi)
+  void _showMessage(String message) {
+    ScaffoldMessenger.of(context)
+      ..clearSnackBars()
+      ..showSnackBar(
+        SnackBar(
+          content: Text(message),
+          duration: const Duration(seconds: 1),
+        ),
+      );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -58,11 +70,7 @@ class _NonBlockingDemoState extends State<NonBlockingDemo>
                       child: Padding(
                         padding: const EdgeInsets.only(top: 10),
                         child: ElevatedButton(
-                          onPressed: () {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(content: Text('Đã bấm nút bên trong!')),
-                            );
-                          },
+                          onPressed: () => _showMessage('Đã bấm nút bên trong!'),
                           child: const Text('Nút bên trong'),
                         ),
                       ),
@@ -75,7 +83,7 @@ class _NonBlockingDemoState extends State<NonBlockingDemo>
           const SizedBox(height: 20),
           // Nút bên ngoài chứng minh ứng dụng không bị block
           OutlinedButton(
-            onPressed: () {},
+            onPressed: () => _showMessage('Đã bấm nút ngoài!'),
             child: const Text('Nút ngoài (luôn bấm được)'),
           ),
         ],

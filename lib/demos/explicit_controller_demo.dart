@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// PHẦN VŨ DUY DƯƠNG: Explicit Animation (AnimationController + Vòng đời dispose)
+//Explicit Animation (AnimationController + Vòng đời dispose)
 class ExplicitControllerDemo extends StatefulWidget {
   const ExplicitControllerDemo({super.key});
 

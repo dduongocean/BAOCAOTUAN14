@@ -22,9 +22,9 @@ class MainDemo extends StatelessWidget {
           title: const Text('Demo Chủ đề 8'),
           bottom: const TabBar(
             tabs: [
-              Tab(text: '1. Implicit (Phan Vĩnh Sơn)'),
-              Tab(text: '2. Explicit (Vũ Duy Dương)'),
-              Tab(text: '3. Thực hành (Cả hai)'),
+              Tab(text: '1. Implicit Animation'),
+              Tab(text: '2. Explicit Animation'),
+              Tab(text: '3. Non-blocking UI'),
             ],
           ),
         ),
