@@ -5,20 +5,18 @@
 - **Chủ đề 08:** Animation và Cử chỉ nâng cao trong Flutter
 - **Giảng viên hướng dẫn:** TS. Nguyễn Duy Nhật Viễn
 - **Sinh viên thực hiện:**
-  1. Phan Vĩnh Sơn - Nhóm trưởng
-  2. Vũ Duy Dương - Thành viên
+  1. Phan Vĩnh Sơn
+  2. Vũ Duy Dương
 
 ---
 
-## 1. Bảng phân công công việc (WBS)
+## 1. Phân công nhiệm vụ nhóm
 
-| STT | Nhiệm vụ (WBS) | Vai trò | Người phụ trách | Sản phẩm bàn giao |
-| :---: | :--- | :--- | :---: | :--- |
-| 1 | UI Design | Thiết kế giao diện Card & Layout Slide | Phan Vĩnh Sơn | Giao diện các demo, Slide báo cáo |
-| 2 | Business Logic | Xử lý cử chỉ người dùng (GestureDetector) | Phan Vĩnh Sơn | lib/demos/implicit_card_demo.dart |
-| 3 | State Management | Quản lý Controller, Ticker & Vòng đời dispose | Vũ Duy Dương | lib/demos/explicit_controller_demo.dart |
-| 4 | Database / Local Data | Quản lý trạng thái bộ nhớ đệm cục bộ | Vũ Duy Dương | State quản lý chuyển đổi giao diện |
-| 5 | Báo cáo & Slide | Biên soạn slide kiến trúc, tài liệu | Cả nhóm | Slide thuyết trình, README.md |
+| Thành viên | Vai trò | Tệp phụ trách trong `lib/` | Nội dung đảm nhiệm |
+|:---|:---|:---|:---|
+| **Phan Vĩnh Sơn** | Implicit Animation & Gesture Handling | [`lib/demos/implicit_card_demo.dart`](lib/demos/implicit_card_demo.dart) | - Bắt và xử lý sự kiện cử chỉ chạm (`onTap`) qua `GestureDetector`.<br>- Hiện thực Implicit Animation tự động tính toán nội suy kích thước và màu sắc với `AnimatedContainer`.<br>- Phân tích thời điểm sử dụng Animation và tác động tới trải nghiệm người dùng (UX). |
+| **Vũ Duy Dương** | Explicit Animation & Resource Lifecycle | [`lib/demos/explicit_controller_demo.dart`](lib/demos/explicit_controller_demo.dart) | - Khởi tạo và điều khiển chuyển động tuyến tính bằng `AnimationController` (`forward`, `reverse`).<br>- Đồng bộ nhịp khung hình phần cứng bằng Ticker (`SingleTickerProviderStateMixin`).<br>- Quản lý tài nguyên, bắt buộc giải phóng bộ nhớ bằng `dispose()` chống rò rỉ RAM (Memory Leak). |
+| **Cả 2 Thành viên** | Non-blocking UX & System Integration | [`lib/demos/non_blocking_demo.dart`](lib/demos/non_blocking_demo.dart)<br>[`lib/main.dart`](lib/main.dart) | - Hiện thực kỹ thuật chuyển động không gây cản trở thao tác (Non-blocking UX): cho phép đảo chiều tức thì khi bấm liên tục.<br>- Kết hợp `IgnorePointer` để vô hiệu hóa tương tác khi phần tử đang ẩn/chuyển tiếp.<br>- Xây dựng giao diện Tab điều hướng 3 màn hình tại `main.dart`. |
 
 ---
 
@@ -27,14 +25,14 @@
 ```text
 BAOCAOTUAN14/
 ├── lib/
-│   ├── main.dart                      # Giao diện chính điều hướng 3 Tab
+│   ├── main.dart                         # [Cả hai]: Giao diện chính điều hướng 3 Tab
 │   └── demos/
-│       ├── implicit_card_demo.dart    # Demo Implicit Animation & GestureDetector
-│       ├── explicit_controller_demo.dart # Demo Explicit AnimationController & dispose
-│       └── non_blocking_demo.dart     # Demo xử lý Non-blocking UX (IgnorePointer)
-├── pubspec.yaml                       # Cấu hình dự án Flutter
-├── README.md                          # Hướng dẫn chạy và thông tin dự án
-└── NOI_DUNG_SLIDE.md                  # Đề cương nội dung thuyết trình
+│       ├── implicit_card_demo.dart       # [Phan Vĩnh Sơn]: Demo Implicit Animation & GestureDetector
+│       ├── explicit_controller_demo.dart # [Vũ Duy Dương]: Demo Explicit AnimationController & dispose
+│       └── non_blocking_demo.dart        # [Cả hai]: Demo xử lý Non-blocking UX (IgnorePointer)
+├── pubspec.yaml                          # Cấu hình dự án Flutter
+├── README.md                             # Hướng dẫn chạy và thông tin dự án
+└── NOI_DUNG_SLIDE.md                     # Đề cương nội dung thuyết trình
 ```
 
 ---
